@@ -15,6 +15,7 @@ public class test_pages {
     page_elements pageElements;
     page_home pageHome;
 
+    // Note that the @BeforeTest will run once for all @Tests i.e. the tests will inherit the driver
     @BeforeTest
     public void loadTheHomePage() throws InterruptedException {
         pageHome = new page_home();
@@ -25,6 +26,7 @@ public class test_pages {
         Thread.sleep(1000);
     }
 
+    // Note that priority value is set as otherwise the tests will be run by name and this might break the inheritance chain
     @Test(priority = 0)
     public void testTheHomePageUrl() {
         String currentUrl = driver.getCurrentUrl();
@@ -41,7 +43,17 @@ public class test_pages {
         Thread.sleep(1500);
         String currentUrl = driver.getCurrentUrl();
         // Assert if the next page (elements) is loaded properly
-        Assert.assertEquals("[ERROR] Different than the expected URL!", expectedUrl, currentUrl);
+        Assert.assertEquals("[ERROR] ", expectedUrl, currentUrl);
+    }
+
+    @Test(priority = 2)
+    public void testGoToTextForm() throws InterruptedException {
+        // Click on the text box button on the elements page
+        pageElements.clickTextBoxButton(driver);
+        Thread.sleep(1500);
+        String currentUrl = driver.getCurrentUrl();
+        // Assert if the next page (elements) is loaded properly
+        Assert.assertEquals("[ERROR] ", "https://demoqa.com/text-box", currentUrl);
     }
 
     @AfterTest
