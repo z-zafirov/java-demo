@@ -12,11 +12,28 @@ Run the example tests by:
 
 3. Run the /src/com/tests/tests_pages.java file
 
+## Structure and content
+```
+.
+└── src
+    └── com                 # Component files
+        ├── custom          # Custom libraries and functions
+        ├── pages           # Pages descriptions (regarding POM)
+        └── tests           # Tests methods (TestNG annotations)
+```
+     
+
 ## Web driver setup
-Selected web driver by  default is Chrome, but it can be changed in the "@BeforeTest" method:
+Selected web driver by default is Chrome and it can be changed:
 
 ```java
-	driver = new ChromeDriver();
+@BeforeTest
+public void loadTheHomePage() throws InterruptedException {
+        pageHome = new page_home();
+        pageElements = new page_elements();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        }
 ```
 
 
