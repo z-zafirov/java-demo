@@ -21,12 +21,12 @@ public class test_pages {
         pageElements = new page_elements();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.get(pageHome.getHomePageUrl());
         Thread.sleep(1000);
     }
 
     @Test(priority = 0)
     public void testTheHomePageUrl() {
-        driver.get(pageHome.getHomePageUrl());
         String currentUrl = driver.getCurrentUrl();
         Assert.assertEquals("[ERROR] Different than the expected URL!", "https://demoqa.com/", currentUrl);
     }
@@ -36,7 +36,7 @@ public class test_pages {
         // Build the expected URL
         String expectedUrl = pageHome.getHomePageUrl() + pageElements.getPageUrl();
         // Click on the elements button on the home page
-        driver.findElement(pageHome.getElementsButtonLocator()).click();
+        pageHome.clickElementsButton(driver);
         // Wait for the upcoming page to be loaded and then get its URL
         Thread.sleep(1500);
         String currentUrl = driver.getCurrentUrl();
