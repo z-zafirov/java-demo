@@ -40,6 +40,8 @@ public void loadTheHomePage() throws InterruptedException {
 
 ## Practical task
 
+### Task 1
+
 #### Description
 The main task is to build similar framework, but for another web app with different structure and business logic i.e. you will have to:
 
@@ -59,6 +61,10 @@ Also you will have to install a local jenkins instance, and then to configure it
 - Level of difficulty: low
 - Login data provided i.e. no need of registration and login tests
 - Web app to be automated: https://robotsparebinindustries.com/
+
+### Task 2
+
+In progress...
 
 ## Note
 Please note that this is a demo project which is not yet complete <br> i.e. there are broken things in it!
