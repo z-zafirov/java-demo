@@ -9,7 +9,7 @@ public class page_home {
     private By elementsButtonLocator = By.xpath("//*[@class='category-cards']/div[1]");
 
 
-    public String getHomePageUrl() {
+    public String getUrl() {
         return baseUrl;
     }
 
