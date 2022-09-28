@@ -54,7 +54,7 @@ The main task is to build similar framework, but for another web app with differ
 
 ```
 Mind that in order to configure a framework to be ran from CI/CD, it has to be uploaded in a Git repo.
-Also you will have to install a local jenkins instance, and then to configure it to run the repo.
+Also you will have to install a local Jenkins instance, and then to configure it to run the repo.
 ```
 
 #### Details
