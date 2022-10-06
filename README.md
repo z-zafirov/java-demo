@@ -49,8 +49,9 @@ The main task is to build similar framework, but for another web app with differ
 2. Think about the business logic, note what is important to test
 3. Prepare a list of test cases to be automated
 4. Build a framework to run the web tests
-5. Configure* the framework to be run from CI/CD tool i.e. Jenkins
-6. Provide a report - tests descriptions, run results, etc.
+5. Upload the solution in Git
+6. ~~Configure* the framework to be run from CI/CD tool i.e. Jenkins~~
+7. ~~Provide a report - tests descriptions, run results, etc.~~
 
 ```
 Mind that in order to configure a framework to be ran from CI/CD, it has to be uploaded in a Git repo.
