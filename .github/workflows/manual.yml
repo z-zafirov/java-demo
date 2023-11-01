@@ -1,9 +1,20 @@
 name: Run Postman Collection
 
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Run an API test'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
 
 jobs:
   postman:
@@ -22,5 +33,4 @@ jobs:
         run: npm install -g newman
 
       - name: Run Postman Collection
-        run: newman run https://github.com/z-zafirov/postman.git/Automated%20Charging%20Session%20%5BDev%5D.postman_collection.json
-        # run: newman run path/to/your-collection.json --environment path/to/your-environment.json
+        run: newman run path/to/your-collection.json --environment path/to/your-environment.json
