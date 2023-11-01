@@ -33,5 +33,4 @@ jobs:
         run: npm install -g newman
 
       - name: Run Postman Collection
-        run: newman run https://github.com/z-zafirov/postman.git/Automated%20Charging%20Session%20%5BDev%5D.postman_collection.json
-        # run: newman run path/to/your-collection.json --environment path/to/your-environment.json
+        run: newman run https://github.com/z-zafirov/postman.git/charge.json
