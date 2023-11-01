@@ -65,7 +65,7 @@ Also you will have to install a local Jenkins instance, and then to configure it
 
 ### Task 2
 
-In progress...
+<In progress>
 
 ## Note
 Please note that this is a demo project which is not yet complete <br> i.e. there are broken things in it!
