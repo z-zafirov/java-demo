@@ -33,4 +33,4 @@ jobs:
         run: npm install -g newman
 
       - name: Run Postman Collection
-        run: newman run https://github.com/z-zafirov/postman/blob/master/charge.json
+        run: newman run https://github.com/z-zafirov/postman.git/wait3s.json
