@@ -10,9 +10,9 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Run an API test'
         # Default value if no value is explicitly provided
-        default: 'World'
+        # default: 'World'
         # Input has to be provided for the workflow to run
-        required: true
+        required: false
         # The data type of the input
         type: string
 
@@ -27,10 +27,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14' # You can specify your desired Node.js version
+          node-version: '16' # You can specify your desired Node.js version
 
       - name: Install Newman
         run: npm install -g newman
 
       - name: Run Postman Collection
-        run: newman run path/to/your-collection.json --environment path/to/your-environment.json
+        run: newman run https://github.com/z-zafirov/postman.git/Automated%20Charging%20Session%20%5BDev%5D.postman_collection.json
+        # run: newman run path/to/your-collection.json --environment path/to/your-environment.json
