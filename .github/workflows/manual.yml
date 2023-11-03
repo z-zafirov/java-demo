@@ -32,8 +32,12 @@ jobs:
       - name: Install Newman
         run: npm install -g newman
 
-      # - name: Run Postman Collection
+      - name: Run Postman Collection
         # run: newman run https://github.com/z-zafirov/postman/blob/master/sample.json
-      - uses: matt-ball/newman-action@master
+        uses: matt-ball/newman-action@master
         with:
           collection: https://github.com/z-zafirov/postman/blob/master/sample.json
+        
+      # - uses: matt-ball/newman-action@master
+        # with:
+          # collection: https://github.com/z-zafirov/postman/blob/master/sample.json
