@@ -32,10 +32,11 @@ jobs:
       - name: Install Newman
         run: |
             npm install -g newman
-            npm install -g newman-reporter-htmlextra
+            # npm install -g newman-reporter-htmlextra
 
       - name: Run Postman Collection
-        run: newman run https://github.com/z-zafirov/postman/blob/master/sample.json -r htmlextra --reporter-htmlextra-export docs/index.html || true
+        run: newman run https://github.com/z-zafirov/postman/blob/master/sample.json || true
+        # run: newman run https://github.com/z-zafirov/postman/blob/master/sample.json -r htmlextra --reporter-htmlextra-export docs/index.html || true
         # uses: matt-ball/newman-action@master
         # with:
           # collection: https://github.com/z-zafirov/postman/blob/master/sample.json
