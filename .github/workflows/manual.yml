@@ -30,14 +30,13 @@ jobs:
           # node-version: '16' # You can specify your desired Node.js version
 
       - name: Install Newman
-        run: npm install -g newman
+        run: |
+            npm install -g newman
+            npm install -g newman-reporter-htmlextra
 
       - name: Run Postman Collection
-        # run: newman run https://github.com/z-zafirov/postman/blob/master/sample.json
-        uses: matt-ball/newman-action@master
-        with:
-          collection: https://github.com/z-zafirov/postman/blob/master/sample.json
-        
-      # - uses: matt-ball/newman-action@master
+        run: newman run https://github.com/z-zafirov/postman/blob/master/sample.json -r htmlextra --reporter-htmlextra-export docs/index.html || true
+        # uses: matt-ball/newman-action@master
         # with:
           # collection: https://github.com/z-zafirov/postman/blob/master/sample.json
+          # environment: https://github.com/z-zafirov/postman/blob/master/sample.json
