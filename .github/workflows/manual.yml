@@ -24,6 +24,7 @@ jobs:
       - uses: matt-ball/newman-action@master
         with:
           # apiKey: ${{ secrets.postmanApiKey }}
-          collection: https://raw.githubusercontent.com/z-zafirov/postman/master/postman.sample.json
           # environment: 5922408-228c7edd-fc15-4f68-9665-a35d7df6945b
           envVar: '[{ "key": "endpoint", "value": "${{ inputs.endpoint }}" }]'
+          collection: https://raw.githubusercontent.com/z-zafirov/postman/master/postman.sample.json
+         
