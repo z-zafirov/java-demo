@@ -8,8 +8,7 @@ on:
 jobs:
   newman:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@master
-      - uses: matt-ball/newman-action@master
-        with:
-          collection: https://github.com/z-zafirov/postman/blob/master/postman.sample.json
+      - name: Run Postman Collection
+        run: newman run https://github.com/z-zafirov/postman/blob/master/postman.sample.json
