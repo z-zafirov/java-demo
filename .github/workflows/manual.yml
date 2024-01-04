@@ -8,7 +8,7 @@ on:
       endpoint:
         type: string
         description: Endpoint
-        default: get
+
 
 
 jobs:
