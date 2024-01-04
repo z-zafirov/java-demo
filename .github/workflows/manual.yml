@@ -12,7 +12,7 @@ on:
 
 
 jobs:
-  newman:
+  sample_get:
     runs-on: ubuntu-latest
     
     steps:
