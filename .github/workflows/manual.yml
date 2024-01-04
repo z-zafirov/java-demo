@@ -5,8 +5,8 @@ name: Run Postman Collection
 on:
   workflow_dispatch:
     inputs:
-      name:
-        type: input
+      endpoint:
+        type: string
         description: Endpoint
         default: get
 
@@ -16,12 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Run Postman Collection
-        run: newman run https://raw.githubusercontent.com/z-zafirov/postman/master/postman.sample.json
+      # - name: Sample Get
+        # run: newman run https://raw.githubusercontent.com/z-zafirov/postman/master/postman.sample.json
 
-      # - uses: actions/checkout@master
-      # - uses: matt-ball/newman-action@master
-        # with:
+      - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@master
+        with:
           # apiKey: ${{ secrets.postmanApiKey }}
-          # collection: https://github.com/z-zafirov/postman/blob/master/postman.sample.json
+          collection: https://raw.githubusercontent.com/z-zafirov/postman/master/postman.sample.json
           # environment: 5922408-228c7edd-fc15-4f68-9665-a35d7df6945b
+          envVar: '[{ "key": "endpoint", "value": ${{ inputs.endpoint }} }]'
