@@ -1,1 +1,30 @@
+name: Run Postman Collection
 
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    inputs:
+      endpoint:
+        type: string
+        description: Endpoint
+        default: get
+        # If there is a default value, then the job will be run with that value even if you submit an empty input!
+
+
+jobs:
+  sample_get:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # - name: Sample Get
+        # run: newman run https://raw.githubusercontent.com/z-zafirov/postman/master/postman.sample.json
+
+      - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@master
+        with:
+          # apiKey: ${{ secrets.postmanApiKey }}
+          collection: https://raw.githubusercontent.com/z-zafirov/postman/master/postman.sample.json
+          # environment: 5922408-228c7edd-fc15-4f68-9665-a35d7df6945b
+          envVar: '[{ "key": "endpoint", "value": "${{ inputs.endpoint }}" }]'
+         
