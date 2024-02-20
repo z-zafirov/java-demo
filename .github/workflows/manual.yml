@@ -10,6 +10,9 @@ on:
         description: Endpoint
         default: get
         # If there is a default value, then the job will be run with that value even if you submit an empty input!
+      test_input:
+        type: boolean
+        default: true
 
 
 jobs:
