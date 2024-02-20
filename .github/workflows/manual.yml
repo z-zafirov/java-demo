@@ -7,7 +7,7 @@ on:
     inputs:
       request type:
         type: string
-        description: Endpoint
+        description: Request type
         default: get
         # If there is a default value, then the job will be run with that value even if you submit an empty input!
       test input:
