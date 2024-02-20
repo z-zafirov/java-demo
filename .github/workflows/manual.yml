@@ -5,12 +5,12 @@ name: Run Postman Collection
 on:
   workflow_dispatch:
     inputs:
-      endpoint:
+      request type:
         type: string
         description: Endpoint
         default: get
         # If there is a default value, then the job will be run with that value even if you submit an empty input!
-      test_input:
+      test input:
         type: boolean
         default: true
 
