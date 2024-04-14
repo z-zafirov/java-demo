@@ -1,4 +1,4 @@
-package com.tests;
+package main.java.com.tests;
 
 import com.pages.page_elements;
 import com.pages.page_home;
